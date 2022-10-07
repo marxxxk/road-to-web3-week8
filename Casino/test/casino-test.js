@@ -80,7 +80,6 @@ describe("Casino", async () => {
     }          
   })   // it "Not allow you to accept an already accepted bet" 
 
-
   it("Not allow you to accept with the wrong amount", async () => {
     f = await ethers.getContractFactory("Casino")
     c = await f.deploy()
@@ -97,7 +96,6 @@ describe("Casino", async () => {
           .match(/Need to bet the same amount as sideA/)
     }          
   })   // it "Not allow you to accept with the wrong amount"   
-
 
   it("Not allow you to reveal with wrong value", async () => {
     f = await ethers.getContractFactory("Casino")
@@ -118,7 +116,6 @@ describe("Casino", async () => {
           .match(/Not a bet you placed or wrong value/)
     }          
   })   // it "Not allow you to accept an already accepted bet" 
-
 
   it("Not allow you to reveal before bet is accepted", async () => {
     f = await ethers.getContractFactory("Casino")
@@ -165,7 +162,6 @@ describe("Casino", async () => {
 
   })   // it "Work all the way through (B wins)"
 
-
   it("Work all the way through (A wins)", async () => {
     signer = await ethers.getSigners()
     f = await ethers.getContractFactory("Casino")
@@ -189,7 +185,6 @@ describe("Casino", async () => {
     postBalanceB = await ethers.provider.getBalance(signer[1].address)        
     deltaB = postBalanceB.sub(preBalanceB)
     expect(deltaB.toNumber()).to.equal(0) 
-  })   // it "Work all the way through (A wins)"
+  }) // it "Work all the way through (A wins)"
 
-
-})     // describe("Casino")
+}) // describe("Casino")
